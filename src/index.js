@@ -4,10 +4,15 @@ import "./index.css";
 import App from "./App";
 import "./assets/fonts/Montserrat/static/Montserrat-Regular.ttf";
 import { BrowserRouter } from "react-router-dom";
+import store from "./storage/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>
 );
