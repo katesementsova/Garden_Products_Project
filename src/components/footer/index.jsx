@@ -28,7 +28,7 @@ export default function Footer() {
   //   },
   // ];
   return (
-    <footer>
+    <footer className={styles.footer_container}>
       <h1 className={styles.contact}>Contact</h1>
       <div className={styles.contact_list}>
         <div className={styles.contact_link}>
@@ -62,7 +62,7 @@ export default function Footer() {
         ))}
       </ul> */}
 
-      <img src={Map}></img>
+      <img className={styles.map} src={Map}></img>
     </footer>
   );
 }

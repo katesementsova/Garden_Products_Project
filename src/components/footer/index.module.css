@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.footer_container {
+  margin: auto 40px;
+  margin-top: 80px;
+}
+
 .contact {
   font-size: 64px;
   font-style: normal;
@@ -45,4 +50,10 @@
 .cotact_content img {
   height: 43px;
   width: 43px;
+}
+
+.map {
+  height: 350px;
+  align-self: stretch;
+  width: 100%;
 }

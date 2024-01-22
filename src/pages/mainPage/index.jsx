@@ -1,13 +1,17 @@
+import React from "react";
+import styles from "./index.module.css";
 import Welcome from "../../components/welcome";
-import Categories from "../categories/index";
+import Categories from "../../components/categories/index";
+import Discount from "../../components/discount";
+import Sale from "../../components/sale/index";
 
 function Mainpage() {
   return (
     <div>
       <Welcome />
-     <Categories />
-      {/* discount */}
-      {/* sales */}
+      <Categories />
+      <Discount />
+      <Sale />
     </div>
   );
 }

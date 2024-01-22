@@ -1,0 +1,20 @@
+.categories_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.categories_title {
+}
+
+.categories_list_container {
+  display: grid;
+  grid-template-columns: (4, 1fr);
+}
+
+.categories_img {
+  width: 300px;
+  height: 200px;
+}
+
+.categories_name {
+}
