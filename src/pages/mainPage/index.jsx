@@ -11,6 +11,7 @@ function Mainpage() {
       <Welcome />
       <Categories />
       <Discount />
+
       <Sale />
     </div>
   );

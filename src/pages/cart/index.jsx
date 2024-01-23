@@ -4,6 +4,7 @@ import Line from "../../assets/images/line.svg";
 import Secateurs from "../../assets/images/secator.svg";
 import Minus from "../../assets/images/minus.svg";
 import Plus from "../../assets/images/plus.svg";
+import CloseImage from "../../assets/images/ic-x.svg";
 
 function Cart() {
   return (
@@ -16,11 +17,14 @@ function Cart() {
       <div className={styles.cart_forms}>
         <div className={styles.cart_products}>
           <div className={styles.cart_product}>
-            <img className={styles.cart_image} src={Secateurs}></img>
+            <img className={styles.cart_image} src={Secateurs} />
+
             <div className={styles.product_info}>
               <div className={styles.product_item}>
                 <h2 className={styles.cart_product_description}>Secateurs</h2>
-                <span className={styles.close}>x</span>
+                <button className={styles.close}>
+                  <img className={styles.closeImage} src={CloseImage} />
+                </button>
               </div>
               <div className={styles.counter_form}>
                 <div className={styles.counter}>
@@ -42,7 +46,9 @@ function Cart() {
             <div className={styles.product_info}>
               <div className={styles.product_item}>
                 <h2 className={styles.cart_product_description}>Secateurs</h2>
-                <span className={styles.close}>x</span>
+                <button className={styles.close}>
+                  <img className={styles.closeImage} src={CloseImage}></img>
+                </button>
               </div>
               <div className={styles.counter_form}>
                 <div className={styles.counter}>
@@ -64,7 +70,9 @@ function Cart() {
             <div className={styles.product_info}>
               <div className={styles.product_item}>
                 <h2 className={styles.cart_product_description}>Secateurs</h2>
-                <span className={styles.close}>x</span>
+                <button className={styles.close}>
+                  <img className={styles.closeImage} src={CloseImage}></img>
+                </button>
               </div>
               <div className={styles.counter_form}>
                 <div className={styles.counter}>

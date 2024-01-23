@@ -77,10 +77,21 @@
 import React from "react";
 import styles from "./index.module.css";
 import Categories from "../../components/categories";
+import { NavLink } from "react-router-dom";
+import Line from "../../assets/images/line.svg";
 
 export default function CategoriesPage() {
   return (
     <section className={styles.categories_page}>
+      <div className={styles.navigate_menu}>
+        <NavLink className={styles.navigate_link} to={"/"}>
+          <button className={styles.previous_section}>Main page</button>
+        </NavLink>
+        <img className={styles.navigate_line} src={Line} />
+        <NavLink className={styles.navigate_link} to={"Categories"}>
+          <button className={styles.current_section}>Categories</button>
+        </NavLink>
+      </div>
       <Categories />
     </section>
   );

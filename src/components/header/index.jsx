@@ -11,7 +11,7 @@ import CartImg from "../../assets/images/basket_empty.svg";
 export default function Header() {
   const nav = [
     { name: "Main Page", path: "Mainpage" },
-    { name: "Categories", path: "Categories" },
+    { name: "Categories", path: "CategoriesPage" },
     { name: "All products", path: "AllProducts" },
     { name: "All sales", path: "AllSales" },
   ];

@@ -45,3 +45,82 @@
 //     </div>
 //   );
 // }
+
+////////////////////
+
+import React from "react";
+import styles from "./index.module.css";
+import { NavLink } from "react-router-dom";
+import Line from "../../assets/images/line.svg";
+import FilterByDiscount from "../../components/filterByDiscount";
+import FilterByPrice from "../../components/filterByPrice";
+import Sorting from "../../components/sorting";
+import SaleImage from "../../assets/images/sale_image.svg";
+
+export default function AllProducts() {
+  return (
+    <section className={styles.allProducts}>
+      <div className={styles.navigate_menu}>
+        <NavLink className={styles.navigate_link} to={"/"}>
+          <button className={styles.previous_section}>Main page</button>
+        </NavLink>
+        <img className={styles.navigate_line} src={Line} />
+        <NavLink className={styles.navigate_link} to={"AllProducts"}>
+          <button className={styles.current_section}>All products</button>
+        </NavLink>
+      </div>
+      <h1 className={styles.allProducts_title}>All products</h1>
+      <div className={styles.allProducts_sorting_container}>
+        <FilterByPrice />
+        <FilterByDiscount />
+        <Sorting />
+      </div>
+      <div className={styles.allProducts_items}>
+        <div className={styles.allProducts_item}>
+          <img className={styles.allProducts_image} src={SaleImage}></img>
+          <span className={styles.allProducts_discount}>-50%</span>
+          <p className={styles.allProducts_description}>
+            Decorative forged bridge
+          </p>
+          <div className={styles.allProducts_price}>
+            <span className={styles.allProducts_newPrice}>$500</span>
+            <span className={styles.allProducts_oldPrice}>$1000</span>
+          </div>
+        </div>
+        <div className={styles.allProducts_item}>
+          <img className={styles.allProducts_image} src={SaleImage}></img>
+          <span className={styles.allProducts_discount}>-50%</span>
+          <p className={styles.allProducts_description}>
+            Decorative forged bridge
+          </p>
+          <div className={styles.allProducts_price}>
+            <span className={styles.allProducts_newPrice}>$500</span>
+            <span className={styles.allProducts_oldPrice}>$1000</span>
+          </div>
+        </div>
+        <div className={styles.allProducts_item}>
+          <img className={styles.allProducts_image} src={SaleImage}></img>
+          <span className={styles.allProducts_discount}>-50%</span>
+          <p className={styles.allProducts_description}>
+            Decorative forged bridge
+          </p>
+          <div className={styles.allProducts_price}>
+            <span className={styles.allProducts_newPrice}>$500</span>
+            <span className={styles.allProducts_oldPrice}>$1000</span>
+          </div>
+        </div>
+        <div className={styles.allProducts_item}>
+          <img className={styles.allProducts_image} src={SaleImage}></img>
+          <span className={styles.allProducts_discount}>-50%</span>
+          <p className={styles.allProducts_description}>
+            Decorative forged bridge
+          </p>
+          <div className={styles.allProducts_price}>
+            <span className={styles.allProducts_newPrice}>$500</span>
+            <span className={styles.allProducts_oldPrice}>$1000</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

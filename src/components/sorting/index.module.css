@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  color: #282828;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.btn {
+  display: flex;
+  width: 200px;
+  padding: 8px 8px 8px 16px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+}
+
+.subtitle {
+  flex: 1 0 0;
+  text-align: left;
+  color: #282828;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 126%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}

@@ -3,8 +3,7 @@ import Header from "./components/header/index";
 import { Routes, Route } from "react-router-dom";
 import Mainpage from "./pages/mainPage/index";
 import CategoriesPage from "./pages/categoriesPage/index";
-import Categories from "./components/categories/index";
-import Allproducts from "./pages/allProducts/index";
+import AllProducts from "./pages/allProducts/index";
 import AllSales from "./pages/allSales/index";
 import Tools from "./pages/tools/index";
 import Item from "./pages/item/index";
@@ -31,7 +30,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Mainpage />} />
-        <Route path="Categories" element={<Categories />} />
+        <Route path="CategoriesPage" element={<CategoriesPage />} />
+        <Route path="Tools" element={<Tools />} />
+        <Route path="AllProducts" element={<AllProducts />} />
+        <Route path="AllSales" element={<AllSales />} />
+        <Route path="Item" element={<Item />} />
         <Route path="Cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
