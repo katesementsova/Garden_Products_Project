@@ -50,9 +50,12 @@
   border: 1px solid #fff;
   color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(255, 255, 255, 1);
-  /* background: linear-gradient(261deg, #0b710b 32.63%, #393 98.96%); */
+  background: transparent;
 }
 
+.discount_input::-webkit-input-placeholder {
+  color: #c5c5c5;
+}
 .discount_btn {
   width: 516px;
   padding: 16px 32px;

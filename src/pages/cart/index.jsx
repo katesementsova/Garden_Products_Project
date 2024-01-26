@@ -31,7 +31,7 @@ function Cart() {
                   <button className={styles.cart_product_button}>
                     <img className={styles.minus} src={Minus}></img>
                   </button>
-                  <button className={styles.count}>1</button>
+                  <div className={styles.count1}>1</div>
                   <button className={styles.cart_product_button}>
                     <img className={styles.plus} src={Plus}></img>
                   </button>
@@ -130,3 +130,31 @@ export default Cart;
 </div>
 </div> */
 }
+
+// Lesson 23/01/2024
+
+// import { useEffect } from "react";
+// import { UseSelector, useDispatch, useSelector } from "react-redux";
+// import { getAllProducts } from "../../store/slices/productsSlice/index";
+
+// function Cart_test() {
+//   const dispatch = useDispatch();
+//   const {productsList, basket} = useSelector((state) => state.products.products);
+
+//   useEffect(() => {
+//   dispatch(getAllProducts());
+//   }, [])
+
+//   return <>
+
+//   <div>
+//     {productsList.map((product) =>
+//     <div onClick(() => dispatch.addToBasket({product.id})>
+//       <img src="" + product.image />
+//       </div>
+//     <span>{product.price}</span>
+//     <h3>{product.title}</h3>
+//     )}
+//   </div>
+//   </>
+// }
