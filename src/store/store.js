@@ -1,17 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import categorySlice from "./slices/categorySlice";
-import productsSlice from "./slices/productsSlice";
+import { productApi } from "../api/productApi";
+import basketSlice from "./slices/cartSlice";
 
 const store = configureStore({
   reducer: {
     category: categorySlice,
-    products: productsSlice,
+    [productApi.reducerPath]: productApi.reducer,
+    // products: productsSlice,
+    basketProducts: basketSlice,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(productApi.middleware),
 });
 
 export default store;
-
-// Lesson 23/01/2024
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import products from './slices'

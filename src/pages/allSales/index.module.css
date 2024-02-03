@@ -71,11 +71,9 @@
 .allSales_items {
   margin-top: 40px;
   display: flex;
-  width: 1360px;
   align-items: flex-start;
   align-content: flex-start;
   gap: 32px;
-  /* flex-wrap: wrap; */
 }
 
 .allSales_item {
@@ -116,6 +114,14 @@
   letter-spacing: 0.6px;
 }
 
+.allSales_info {
+  display: flex;
+  width: 316px;
+  padding: 0px 32px 32px 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
 .allSales_description {
   display: -webkit-box;
   -webkit-box-orient: vertical;

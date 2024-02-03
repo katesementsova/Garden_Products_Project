@@ -5,7 +5,7 @@ import Mainpage from "./pages/mainPage/index";
 import CategoriesPage from "./pages/categoriesPage/index";
 import AllProducts from "./pages/allProducts/index";
 import AllSales from "./pages/allSales/index";
-import Tools from "./pages/tools/index";
+import ProductsOfCategory from "./pages/productsOfCategory/index";
 import Item from "./pages/item/index";
 // import Layouts from "./pages/Layouts/Layouts";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,12 +26,12 @@ function App() {
   // console.log(CategoriesPage);
 
   return (
-    <div>
+    <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Mainpage />} />
         <Route path="CategoriesPage" element={<CategoriesPage />} />
-        <Route path="Tools" element={<Tools />} />
+        <Route path="ProductsOfCategory" element={<ProductsOfCategory />} />
         <Route path="AllProducts" element={<AllProducts />} />
         <Route path="AllSales" element={<AllSales />} />
         <Route path="Item" element={<Item />} />

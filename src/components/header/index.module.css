@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .header_container {
   padding: 30px 40px;
   top: 0;
@@ -16,6 +10,7 @@
   font-size: 20px;
   font-weight: 500;
   width: 100%;
+  border-bottom: 1px solid #ddd;
 }
 
 .nav_list {

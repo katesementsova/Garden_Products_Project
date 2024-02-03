@@ -1,7 +1,7 @@
 .notFound_container {
-  margin: 80px 375px; /* исправить !!!! */
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 32px;
 }

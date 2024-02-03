@@ -1,10 +1,6 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./index.module.css";
-import Mainpage from "../../pages/mainPage/index";
-import Categories from "../../pages/categoriesPage/index";
-import AllProducts from "../../pages/allProducts";
-import AllSales from "../../pages/allSales/index";
-import Cart from "../../pages/cart/index";
 import Logo from "../../assets/images/logo.svg";
 import CartImg from "../../assets/images/basket_empty.svg";
 import { useState } from "react";

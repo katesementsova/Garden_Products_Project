@@ -5,6 +5,7 @@
 
 .sale_head {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 32px;
 }
@@ -18,35 +19,38 @@
 }
 
 .line_btn {
+  width: 100%;
   display: flex;
   padding-top: 10px;
   align-items: center;
-  flex: 1 0 0;
 }
 
 .line {
-  width: 1093px;
+  width: 100%;
   height: 1px;
   background: #ddd;
 }
 
-.sale_link {
+.sale_btn {
+  max-width: 97px;
+  width: 100%;
+  height: 36px;
   display: flex;
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-radius: var(--radius-small, 6px);
-  border: 1px solid var(--grey-divider, #ddd);
+  border-radius: 6px;
+  border: 1px solid #ddd;
 }
 
-.sale_intems {
+.sale_items {
   margin-top: 40px;
   display: flex;
   gap: 32px;
 }
 
-.sale_intem {
+.sale_item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -59,7 +63,7 @@
 .sale_image {
   height: 284px;
   align-self: stretch;
-  border-bottom: 1px solid var(--grey-divider, #ddd);
+  border-bottom: 1px solid #ddd;
   background: lightgray;
   background-position: cover;
   background-repeat: no-repeat;
@@ -74,14 +78,23 @@
   position: absolute;
   right: 16px;
   top: 16px;
-  border-radius: var(--radius-small, 6px);
-  background: var(--green, #393);
-  color: var(--txt-white, #fff);
+  border-radius: 6px;
+  background: #393;
+  color: #fff;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 130%; /* 26px */
   letter-spacing: 0.6px;
+}
+
+.sale_info {
+  display: flex;
+  width: 316px;
+  padding: 0px 32px 32px 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .sale_description {
@@ -90,12 +103,12 @@
   -webkit-line-clamp: 1;
   align-self: stretch;
   overflow: hidden;
-  color: var(--txt-black, #282828);
+  color: #282828;
   text-overflow: ellipsis;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 130%; /* 26px */
+  line-height: 130%;
 }
 
 .sale_price {
@@ -105,18 +118,18 @@
 }
 
 .sale_newPrice {
-  color: var(--txt-black, #282828);
+  color: #282828;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
-  line-height: 110%; /* 44px */
+  line-height: 110%;
 }
 
 .sale_oldPrice {
-  color: var(--txt-grey, #8b8b8b);
+  color: #8b8b8b;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 130%; /* 26px */
+  line-height: 130%;
   text-decoration-line: line-through;
 }

@@ -1,0 +1,49 @@
+.navMenu_container {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.navMenu_link {
+  text-decoration: none;
+}
+
+.previous {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 126%;
+  cursor: pointer;
+}
+
+.current {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  color: #282828;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 126%;
+  cursor: pointer;
+}
+
+.line {
+  width: 16px;
+  height: 1px;
+  background: #ddd;
+}
