@@ -14,11 +14,11 @@ export const productApi = createApi({
     }),
 
     getProductsInCategories: builder.query({
-      query: (id) => "categories/1",
+      query: (id) => `categories/${id}`,
     }),
 
     getProduct: builder.query({
-      query: (id) => "products/1",
+      query: (id) => `products/${id}`,
     }),
 
     sendDiscount: builder.mutation({
