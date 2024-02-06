@@ -1,19 +1,29 @@
 import React, { useState, Link } from "react";
 import styles from "./index.module.css";
-import Line from "../../assets/images/line.svg";
 import Minus from "../../assets/images/minus.svg";
 import Plus from "../../assets/images/plus.svg";
 import CloseImage from "../../assets/images/ic-x.svg";
-import { useSelector } from "react-redux";
-import { basketSelector } from "../../store/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  basketSelector,
+  incrementProduct,
+  removeProduct,
+} from "../../store/slices/cartSlice";
 import { API_URL } from "../../api/apiUrl";
 import ModalWindow from "../../components/modalWindow/index";
 import SectionHead from "../../components/sectionHead";
+import { decrementProduct } from "../../store/slices/cartSlice";
 
 function Cart() {
   const [modalActive, setModalActive] = useState(false);
 
+  const dispatch = useDispatch();
+
   const { basket: basketProducts } = useSelector(basketSelector);
+
+  const decrement = (item) => dispatch(decrementProduct(item));
+  const increment = (item) => dispatch(incrementProduct(item));
+  const removeItem = (item) => dispatch(removeProduct(item));
 
   return (
     <section
@@ -24,13 +34,6 @@ function Cart() {
       {modalActive ? <ModalWindow active={modalActive} /> : ""}
 
       <SectionHead title="Shopping cart" button="Back to the store" />
-      {/* <div className={styles.cart_title}>
-        <h1 className={styles.title}>Shopping cart</h1>
-        <div className={styles.line_btn}>
-          <img className={styles.line} src={Line} />
-          <button className={styles.button}>Back to the store </button>
-        </div>
-      </div> */}
       <div className={styles.cart_forms}>
         <div className={styles.cart_products}>
           {basketProducts.map((product) => (
@@ -45,17 +48,26 @@ function Cart() {
                   <h2 className={styles.cart_product_description}>
                     {product.title}
                   </h2>
-                  <button className={styles.close}>
+                  <button
+                    onClick={() => removeItem(product)}
+                    className={styles.close}
+                  >
                     <img className={styles.closeImage} src={CloseImage} />
                   </button>
                 </div>
                 <div className={styles.counter_form}>
                   <div className={styles.counter}>
-                    <button className={styles.cart_product_button}>
+                    <button
+                      onClick={() => decrement(product)}
+                      className={styles.cart_product_button}
+                    >
                       <img className={styles.minus} src={Minus}></img>
                     </button>
-                    <div className={styles.count1}>1</div>
-                    <button className={styles.cart_product_button}>
+                    <div className={styles.count1}>{product.count}</div>
+                    <button
+                      onClick={() => increment(product)}
+                      className={styles.cart_product_button}
+                    >
                       <img className={styles.plus} src={Plus}></img>
                     </button>
                   </div>

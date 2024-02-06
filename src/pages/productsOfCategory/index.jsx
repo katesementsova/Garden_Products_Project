@@ -9,6 +9,7 @@ import SectionHead from "../../components/sectionHead";
 import ProductCard from "../../@UI/productsCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory } from "../../store/slices/ProductOfCategorySlice";
+import NavMenu from "../../components/navMenu";
 
 // const initAllproducts = [];
 
@@ -23,19 +24,18 @@ export default function ProductsOfCategory() {
   const { categoryProducts } = useSelector(
     ({ productsOfCategory }) => productsOfCategory
   );
-
-  // const location = useLocation();
-  // const { state } = location;
-
-  // const { data: allproducts = initAllproducts } =
-  //   useGetProductsInCategoriesQuery(state.id);
-  // const { category, data } = allproducts;
+  console.log(categoryProducts);
 
   return (
     <section className={styles.productsOfCategory_container}>
       {categoryProducts.data && (
         <div>
+          <NavMenu
+            categoryName={categoryProducts.category.title}
+            current="Categories"
+          />
           <SectionHead />
+
           <h1 className={styles.title}>{categoryProducts.category.title}</h1>
           <div className={styles.sorting_container}>
             <FilterByPrice />

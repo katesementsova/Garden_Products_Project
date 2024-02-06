@@ -35,6 +35,7 @@
 }
 
 .discount_list {
+  /* padding-bottom: 32px; */
   display: flex;
   width: 516px;
   /* width: 100%; */
@@ -52,15 +53,19 @@
   gap: 10px;
   align-self: stretch;
   border-radius: 6px;
-  border: 1px solid #fff;
-  color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(255, 255, 255, 1);
   background: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .discount_input::-webkit-input-placeholder {
   color: #c5c5c5;
 }
+
 .discount_btn {
   max-width: 516px;
   width: 100%;

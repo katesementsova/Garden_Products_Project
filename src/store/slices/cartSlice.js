@@ -27,7 +27,7 @@ const basketSlice = createSlice({
 
     incrementProduct: (state, action) => {
       state.basket = state.basket.map((el) => {
-        if (action.payload === el.id) {
+        if (action.payload.id === el.id) {
           return {
             ...el,
             count: ++el.count,
@@ -41,7 +41,7 @@ const basketSlice = createSlice({
 
     decrementProduct: (state, action) => {
       state.basket = state.basket.map((el) => {
-        if (action.payload === el.id && el.count > 1) {
+        if (action.payload.id === el.id && el.count > 1) {
           return {
             ...el,
             count: el.count - 1,
@@ -51,10 +51,6 @@ const basketSlice = createSlice({
         }
         return el;
       });
-    },
-
-    emptyTrash: (state, action) => {
-      state.basket = [];
     },
   },
 });
