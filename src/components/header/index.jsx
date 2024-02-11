@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 import Logo from "../../assets/images/logo.svg";
 import CartImg from "../../assets/images/basket_empty.svg";
 import { useState } from "react";
-import { ReactComponent as Icon } from "../../assets/images/icon_menu.svg";
+import Icon from "../../assets/images/icon_menu.svg";
 
 export default function Header() {
   const nav = [
@@ -18,6 +18,8 @@ export default function Header() {
 
   return (
     <header className={styles.header_container}>
+      <img className={styles.navbar_logo} src={Icon} />
+
       <NavLink to={"/"}>
         <img className={styles.nav_logo} src={Logo} />
       </NavLink>
@@ -36,9 +38,7 @@ export default function Header() {
         <button
           className={styles.nav_menu_btn}
           onClick={() => setOpen(!isOpen)}
-        >
-          <Icon />
-        </button>
+        ></button>
       </div>
       <NavLink to={"Cart"}>
         <img className={styles.cart} src={CartImg} />

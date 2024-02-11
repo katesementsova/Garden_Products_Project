@@ -1,8 +1,9 @@
 import React from "react";
-import styles from "../../pages/allProducts/index.module.css";
-import { API_URL } from "../../api/apiUrl";
-import { addProduct } from "../../store/slices/cartSlice";
+import styles from "./ProductCard.module.css";
+import { API_URL } from "../../../api/apiUrl";
+import { addProduct } from "../../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({ array }) {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export default function ProductCard({ array }) {
     <div className={styles.allProducts_items}>
       {array
         ? array.map((product) => (
-            <div className={styles.allProducts_item}>
+            <Link className={styles.allProducts_item} to={`Item/${product.id}`}>
               <div className={styles.img_container}>
                 <img
                   className={styles.allProducts_image}
@@ -60,7 +61,7 @@ export default function ProductCard({ array }) {
                   )}
                 </div>
               </div>
-            </div>
+            </Link>
           ))
         : ""}
     </div>

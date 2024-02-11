@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+
 export const getProducts = createAsyncThunk(
   "products/getProducts",
-  async (_, thunkApi) => {
+  async (id, thunkApi) => {
     try {
-      const result = await axios("http://localhost:3333/products/all");
+      const result = await axios(`http://localhost:3333/products/${id}`);
       return result.data;
     } catch (error) {
       console.log(error);
@@ -17,6 +18,7 @@ const productsSlice = createSlice({
     products: [],
     isLoading: false,
   },
+
   extraReducers: (builder) => {
     builder.addCase(getProducts.pending, (state) => {
       state.isLoading = true;
@@ -30,6 +32,7 @@ const productsSlice = createSlice({
     });
   },
 });
+
 export default productsSlice.reducer;
 
 // Lesson 23/01/2024

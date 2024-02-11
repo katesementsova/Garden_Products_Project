@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./index.module.css";
-import Line from "../../assets/images/line.svg";
+import { Link } from "react-router-dom";
 
-export default function SectionHead({ title, button }) {
+export default function SectionHead({ title, button, page }) {
   return (
-    <div className={styles.categories_head}>
+    <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.line_btn}>
-        <img className={styles.line} src={Line}></img>
-        <button className={styles.categories_btn}>{button}</button>
+        <div className={styles.line}></div>
+        <Link className={styles.btn} to={page}>
+          {button}
+        </Link>
       </div>
     </div>
   );

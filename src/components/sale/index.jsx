@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.module.css";
 import { useGetAllProductsQuery } from "../../api/productApi";
 import SectionHead from "../sectionHead";
-import ProductCard from "../../@UI/productsCard/ProductCard";
+import ProductCard from "../../@UI/productsCard/productCard/ProductCard";
 
 let sale = [];
 
@@ -16,7 +16,7 @@ export default function Sale() {
 
   return (
     <section className={styles.sale_container}>
-      <SectionHead title="Sale" button="All sales" />
+      <SectionHead title="Sale" button="All sales" page={"/AllSales"} />
       <ProductCard array={sale.slice(0, 4)} />
     </section>
   );

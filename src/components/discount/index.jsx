@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./index.module.css";
 import DiscountImg from "../../assets/images/discount_img.svg";
+import { Link } from "react-router-dom";
 
 export default function Discount() {
   return (
@@ -15,7 +16,9 @@ export default function Discount() {
             placeholder="Phone number"
           ></input>
           <input className={styles.discount_input} placeholder="Email"></input>
-          <button className={styles.discount_btn}>Get a discount</button>
+          <Link className={styles.discount_btn} to={"/AllSales"}>
+            Get a discount
+          </Link>
         </div>
       </div>
     </section>

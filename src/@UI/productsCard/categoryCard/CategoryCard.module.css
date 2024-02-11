@@ -1,11 +1,4 @@
-.categories_container {
-  margin: 0 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* .categories_items {
+.categories_items {
   display: flex;
   row-gap: 32px;
   justify-content: space-between;
@@ -33,10 +26,14 @@
 }
 
 .categories_title {
+  border: none;
+  background-color: #fff;
   color: #282828;
+  text-decoration: none;
   text-align: center;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
-} */
+  cursor: pointer;
+}

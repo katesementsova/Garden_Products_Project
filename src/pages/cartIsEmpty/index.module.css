@@ -1,0 +1,36 @@
+.container {
+  margin-top: 40px;
+  margin: auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #282828;
+}
+
+.btn {
+  width: 313px;
+  height: 58px;
+  padding: 16px, 56px, 16px, 56px;
+  border-radius: 6px;
+  border: none;
+  gap: 10px;
+  background-color: #339933;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  color: #fff;
+}

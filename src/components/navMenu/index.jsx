@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import Line from "../../assets/images/line.svg";
 import { Link } from "react-router-dom";
 
-export default function NavMenu({ current, categoryName }) {
+export default function NavMenu({ current, categoryName, itemName }) {
   return (
     <div className={styles.navMenu_container}>
       <Link className={styles.navMenu_link} to={"/"}>
@@ -19,6 +19,15 @@ export default function NavMenu({ current, categoryName }) {
           <img className={styles.line} src={Line} />
           <Link className={styles.navMenu_link} to={"/CategoriesPage"}>
             <p className={styles.previous}>{categoryName}</p>
+          </Link>
+        </>
+      )}
+
+      {itemName && (
+        <>
+          <img className={styles.line} src={Line} />
+          <Link className={styles.navMenu_link} to={"/CategoriesPage"}>
+            <p className={styles.previous}>{itemName}</p>
           </Link>
         </>
       )}

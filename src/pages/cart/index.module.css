@@ -1,3 +1,7 @@
+.cart {
+  margin: auto 40px;
+}
+
 .cart_active {
   background-color: rgba(0, 0, 0, 0.7);
   position: relative;
@@ -8,7 +12,7 @@
 
 .form_container {
   margin-top: 40px;
-  margin-right: 40px;
+  /* margin-right: 40px; */
   width: 548px;
   height: 582px;
   padding: 32px;

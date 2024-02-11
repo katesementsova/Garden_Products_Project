@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./index.module.css";
 import NavMenu from "../../components/navMenu";
-import CategoryCard from "../../@UI/productsCard/CategoryCard";
+import CategoryCard from "../../@UI/productsCard/categoryCard/CategoryCard";
 import { useGetCategoriesQuery } from "../../api/productApi";
 
 let categories = [];

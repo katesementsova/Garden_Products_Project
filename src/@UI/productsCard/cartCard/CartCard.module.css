@@ -1,5 +1,6 @@
 .cart_products {
-  margin: 40px;
+  margin-top: 40px;
+  margin-right: 40px;
   display: flex;
   flex-direction: column;
   gap: 16px;

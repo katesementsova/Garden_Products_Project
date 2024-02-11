@@ -51,8 +51,14 @@ export default function CartCard({ array }) {
                   <img className={styles.plus} src={Plus}></img>
                 </button>
               </div>
-              <span className={styles.price}>$155</span>
-              <span className={styles.oldPrice}>$240</span>
+              {product.discont_price ? (
+                <>
+                  <p className={styles.price}>{product.discont_price + "$"}</p>
+                  <p className={styles.oldPrice}>{product.price + "$"}</p>
+                </>
+              ) : (
+                <p className={styles.price}>{product.price + "$"}</p>
+              )}
             </div>
           </div>
         </div>

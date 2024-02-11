@@ -14,6 +14,7 @@ import { getCategory } from "./store/slices/categorySlice";
 import Cart from "./pages/cart/index";
 import NotFound from "./pages/notFound/index";
 import Footer from "./components/footer";
+import CartIsEmpty from "./pages/cartIsEmpty/index";
 
 function App() {
   // const dispatch = useDispatch();
@@ -34,8 +35,10 @@ function App() {
         <Route path="ProductsOfCategory/:id" element={<ProductsOfCategory />} />
         <Route path="AllProducts" element={<AllProducts />} />
         <Route path="AllSales" element={<AllSales />} />
-        <Route path="Item" element={<Item />} />
+        <Route path="AllProducts/Item/:id" element={<Item />} />
+        <Route path="AllSales/Item/:id" element={<Item />} />
         <Route path="Cart" element={<Cart />} />
+        <Route path="CartIsEmpty" element={<CartIsEmpty />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

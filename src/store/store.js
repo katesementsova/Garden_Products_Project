@@ -14,12 +14,14 @@ import {
 } from "redux-persist";
 import categorySlice from "../store/slices/categorySlice";
 import ProductOfCategorySlice from "../store/slices/ProductOfCategorySlice";
+import productsSlice from "./slices/productsSlice";
 
 const rootReducer = combineReducers({
   category: categorySlice,
   [productApi.reducerPath]: productApi.reducer,
   basketProducts: basketSlice,
   productsOfCategory: ProductOfCategorySlice,
+  productItem: productsSlice,
 });
 
 const persistConfig = {

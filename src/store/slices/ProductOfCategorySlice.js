@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+
 export const getCategory = createAsyncThunk(
   "categories/getCategory",
   async (id, thunkApi) => {
@@ -17,6 +18,7 @@ const productOfCategorySlice = createSlice({
     categoryProducts: [],
     isLoading: false,
   },
+  // reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getCategory.pending, (state) => {
       state.isLoading = true;

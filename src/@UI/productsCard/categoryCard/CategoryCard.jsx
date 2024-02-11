@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../../components/categories/index.module.css";
-import { API_URL } from "../../api/apiUrl";
+import styles from "./CategoryCard.module.css";
+import { API_URL } from "../../../api/apiUrl";
 import { Link } from "react-router-dom";
 
 export default function CategoryCard({ array }) {
@@ -15,7 +15,11 @@ export default function CategoryCard({ array }) {
                   src={API_URL + category.image}
                   alt="image"
                 />
-                <p className={styles.categories_title}>{category.title}</p>
+                <Link to={`/ProductsOfCategory/${category.id}`}>
+                  <button className={styles.categories_title}>
+                    {category.title}
+                  </button>
+                </Link>
               </div>
             </Link>
           ))

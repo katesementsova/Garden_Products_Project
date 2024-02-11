@@ -6,6 +6,7 @@ import ModalWindow from "../../components/modalWindow/index";
 import SectionHead from "../../components/sectionHead";
 import UIForm from "../../@UI/forms/UIForm";
 import CartCard from "../../@UI/productsCard/cartCard/CartCard";
+import CartCounter from "../../components/cartCounter/CartCounter";
 
 function Cart() {
   const [modalActive, setModalActive] = useState(false);
@@ -24,34 +25,40 @@ function Cart() {
   console.log(totalAmount);
 
   return (
-    <section
-      className={
-        modalActive ? `${styles.cart} + ${styles.cart_active}` : styles.cart
-      }
-    >
-      {modalActive ? <ModalWindow active={modalActive} /> : ""}
+    <div>
+      <div
+        className={
+          modalActive ? `${styles.cart} + ${styles.cart_active}` : styles.cart
+        }
+      >
+        {modalActive ? <ModalWindow active={modalActive} /> : ""}
 
-      <SectionHead title="Shopping cart" button="Back to the store" />
-      <div className={styles.cart_forms}>
-        <CartCard array={basketProducts} />
-
-        <div className={styles.cart_container}>
-          <div className={styles.form_container}>
-            <h2 className={styles.form_title}>Order detalis</h2>
-            <div className={styles.order_counter}>
-              <p
-                className={styles.form_items}
-              >{`${basketProducts.length} items`}</p>
-              <div className={styles.total_string}>
-                <p className={styles.form_total}>Total</p>
-                <p className={styles.total_price}>{`$${totalAmount}`}</p>
+        <SectionHead
+          title="Shopping cart"
+          button="Back to the store"
+          page={"/"}
+        />
+        <div className={styles.cart_forms}>
+          <CartCard array={basketProducts} />
+          {/* <CartCounter /> */}
+          <div className={styles.cart_totalForm}>
+            <div className={styles.form_container}>
+              <h2 className={styles.form_title}>Order detalis</h2>
+              <div className={styles.order_counter}>
+                <p
+                  className={styles.form_items}
+                >{`${basketProducts.length} items`}</p>
+                <div className={styles.total_string}>
+                  <p className={styles.form_total}>Total</p>
+                  <p className={styles.total_price}>{`$${totalAmount}`}</p>
+                </div>
               </div>
+              <UIForm setModalActive={setModalActive} />
             </div>
-            <UIForm setModalActive={setModalActive} />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

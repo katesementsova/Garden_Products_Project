@@ -5,7 +5,7 @@ import FilterByPrice from "../../components/filterByPrice";
 import Sorting from "../../components/sorting";
 import { useGetAllProductsQuery } from "../../api/productApi";
 import NavMenu from "../../components/navMenu";
-import ProductCard from "../../@UI/productsCard/ProductCard";
+import ProductCard from "../../@UI/productsCard/productCard/ProductCard";
 
 let allProducts = [];
 

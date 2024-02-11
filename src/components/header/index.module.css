@@ -13,6 +13,19 @@
   border-bottom: 1px solid #ddd;
 }
 
+/* @media (max-width: 1000px) {
+  .header_container {
+    padding: 30px 40px;
+    top: 0;
+    position: sticky;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+} */
+
 .nav_list {
   display: flex;
   gap: 32px;
@@ -35,6 +48,12 @@
 }
 
 @media (max-width: 1000px) {
+  .navbar_logo {
+    opacity: 1;
+    position: absolute;
+    background-color: #fff;
+    color: #339933;
+  }
   .header_nav {
     position: fixed;
     top: 0;
@@ -77,4 +96,10 @@
   .header_nav.active {
     transform: translateX(100%);
   }
+}
+
+.navbar_logo {
+  opacity: 0;
+  position: absolute;
+  background-color: #fff;
 }
