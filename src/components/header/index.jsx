@@ -5,6 +5,8 @@ import Logo from "../../assets/images/logo.svg";
 import CartImg from "../../assets/images/basket_empty.svg";
 import { useState } from "react";
 import Icon from "../../assets/images/icon_menu.svg";
+import { useSelector } from "react-redux";
+import { basketSelector } from "../../store/slices/cartSlice";
 
 export default function Header() {
   const nav = [
@@ -15,6 +17,8 @@ export default function Header() {
   ];
 
   const [isOpen, setOpen] = useState();
+
+  const { basket: basketProducts } = useSelector(basketSelector);
 
   return (
     <header className={styles.header_container}>
@@ -40,9 +44,12 @@ export default function Header() {
           onClick={() => setOpen(!isOpen)}
         ></button>
       </div>
-      <NavLink to={"Cart"}>
-        <img className={styles.cart} src={CartImg} />
-      </NavLink>
+      <div className={styles.cart_icon}>
+        <NavLink to={"Cart"}>
+          <img className={styles.cart} src={CartImg} />
+        </NavLink>
+        <div className={styles.cart_count}>{basketProducts.length}</div>
+      </div>
     </header>
   );
 }

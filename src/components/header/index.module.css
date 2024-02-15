@@ -38,11 +38,26 @@
   color: #282828;
 }
 
+.cart_icon {
+  position: relative;
+}
 .cart {
   width: 40px;
   height: 40px;
 }
 
+.cart_count {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  align-items: center;
+  background-color: #339933;
+  color: #fff;
+  border-radius: 50%;
+}
 .nav_menu_btn {
   display: none;
 }

@@ -41,3 +41,7 @@
   font-weight: 600;
   line-height: 130%;
 }
+
+.order_btn {
+  text-decoration: none;
+}

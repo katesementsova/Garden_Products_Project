@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import styles from "./index.module.css";
 import { useParams } from "react-router-dom";
-import FilterByPrice from "../../components/filterByPrice";
-import FilterByDiscount from "../../components/filterByDiscount";
-import Sorting from "../../components/sorting";
 // import { useGetProductsInCategoriesQuery } from "../../api/productApi";
 import ProductCard from "../../@UI/productsCard/productCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory } from "../../store/slices/ProductOfCategorySlice";
 import NavMenu from "../../components/navMenu";
+import FilterByPrice from "../../@UI/reused/sorting/FilterByPrice";
+import FilterByDiscount from "../../@UI/reused/sorting/FilterByDiscount";
+import Sorting from "../../@UI/reused/sorting/Sorting";
+import { useFilterByDiscount } from "../../hooks/useFilterByDiscount";
+import { useFilterByPrice } from "../../hooks/useFilterByPrice";
+import { useFilterBySorted } from "../../hooks/useFilterBySorted";
 
 export default function ProductsOfCategory() {
   const dispatch = useDispatch();
@@ -23,6 +26,18 @@ export default function ProductsOfCategory() {
   );
   console.log(categoryProducts);
 
+  // const {
+  //   filterValue,
+  //   filteredList: filteredListByDiscount,
+  //   onFilter,
+  // } = useFilterByDiscount(allProducts && allProducts.data, "discont_price");
+  // const { filterByMax, filterByMin, filteredList, priceFrom, priceTo } =
+  //   useFilterByPrice(filteredListByDiscount);
+  // const { onSort, sortedList, sortMode } = useFilterBySorted(
+  //   filteredList,
+  //   "price"
+  // );
+
   return (
     <section className={styles.productsOfCategory_container}>
       {categoryProducts.data && (
@@ -33,9 +48,18 @@ export default function ProductsOfCategory() {
           />
           <h1 className={styles.title}>{categoryProducts.category.title}</h1>
           <div className={styles.sorting_container}>
-            <FilterByPrice />
-            <FilterByDiscount />
-            <Sorting />
+            {/* <FilterByPrice
+              priceFrom={priceFrom}
+              priceTo={priceTo}
+              filterByMin={filterByMin}
+              filterByMax={filterByMax}
+            />
+            <FilterByDiscount
+              type="checkbox"
+              checked={filterValue}
+              onChange={onFilter}
+            />
+            <Sorting sortProducts={onSort} sortMode={sortMode} /> */}
           </div>
           <div className={styles.container_cards}>
             <ProductCard array={categoryProducts.data} />

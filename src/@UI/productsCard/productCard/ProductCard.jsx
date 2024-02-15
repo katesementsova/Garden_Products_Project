@@ -15,53 +15,59 @@ export default function ProductCard({ array }) {
     <div className={styles.allProducts_items}>
       {array
         ? array.map((product) => (
-            <Link className={styles.allProducts_item} to={`Item/${product.id}`}>
-              <div className={styles.img_container}>
-                <img
-                  className={styles.allProducts_image}
-                  src={API_URL + product.image}
-                  alt="image"
-                />
-                <button
-                  className={styles.btnAdd}
-                  onClick={() => addProductInBasket(product)}
-                >
-                  Add to cart
-                </button>
-                {product.discont_price ? (
-                  <p className={styles.allProducts_discount}>
-                    {`- ${Math.ceil(
-                      100 - product.discont_price / (product.price / 100)
-                    )} %`}
-                  </p>
-                ) : (
-                  ""
-                )}
-              </div>
+            <div className={styles.container}>
+              <button
+                className={styles.btnAdd}
+                onClick={() => addProductInBasket(product)}
+              >
+                Add to cart
+              </button>
+              <Link
+                className={styles.allProducts_item}
+                to={`Item/${product.id}`}
+              >
+                <div className={styles.img_container}>
+                  <img
+                    className={styles.allProducts_image}
+                    src={API_URL + product.image}
+                    alt="image"
+                  />
 
-              <div className={styles.allProducts_info}>
-                <p className={styles.allProducts_description}>
-                  {product.title}
-                </p>
-
-                <div className={styles.allProducts_price}>
                   {product.discont_price ? (
-                    <>
-                      <p className={styles.allProducts_oldPrice}>
-                        {product.discont_price + "$"}
-                      </p>
-                      <p className={styles.allProducts_newPrice}>
-                        {product.price + "$"}
-                      </p>
-                    </>
-                  ) : (
-                    <p className={styles.allProducts_oldPrice}>
-                      {product.price + "$"}
+                    <p className={styles.allProducts_discount}>
+                      {`- ${Math.ceil(
+                        100 - product.discont_price / (product.price / 100)
+                      )} %`}
                     </p>
+                  ) : (
+                    ""
                   )}
                 </div>
-              </div>
-            </Link>
+
+                <div className={styles.allProducts_info}>
+                  <p className={styles.allProducts_description}>
+                    {product.title}
+                  </p>
+
+                  <div className={styles.allProducts_price}>
+                    {product.discont_price ? (
+                      <>
+                        <p className={styles.allProducts_oldPrice}>
+                          {product.discont_price + "$"}
+                        </p>
+                        <p className={styles.allProducts_newPrice}>
+                          {product.price + "$"}
+                        </p>
+                      </>
+                    ) : (
+                      <p className={styles.allProducts_oldPrice}>
+                        {product.price + "$"}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            </div>
           ))
         : ""}
     </div>

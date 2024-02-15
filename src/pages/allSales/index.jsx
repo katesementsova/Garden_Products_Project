@@ -1,31 +1,43 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "../allProducts/index.module.css";
 import NavMenu from "../../components/navMenu";
 import { useGetAllProductsQuery } from "../../api/productApi";
-import FilterByPrice from "../../components/filterByPrice/index";
-import Sorting from "../../components/sorting";
 import ProductCard from "../../@UI/productsCard/productCard/ProductCard";
+import FilterByPrice from "../../@UI/reused/sorting/FilterByPrice";
+import Sorting from "../../@UI/reused/sorting/Sorting";
+import { useFilterByPrice } from "../../hooks/useFilterByPrice";
+import { useFilterBySorted } from "../../hooks/useFilterBySorted";
 
 let allSales = [];
 
 export default function AllSales() {
-  const { data, isLoading } = useGetAllProductsQuery();
+  const { data } = useGetAllProductsQuery();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  } else {
-    allSales = data.filter((product) => product.discont_price);
-  }
+  useMemo(() => {
+    allSales = data && data.filter((product) => product.discont_price);
+  }, []);
+
+  const { filterByMax, filterByMin, filteredList, priceFrom, priceTo } =
+    useFilterByPrice(allSales);
+  const { onSort, sortedList, sortMode } = useFilterBySorted(
+    filteredList,
+    "price"
+  );
 
   return (
     <section className={styles.allProducts}>
-      <NavMenu previous="Main Page" current="All products" />
+      <NavMenu previous="Main Page" current="All sales" />
       <h1 className={styles.allProducts_title}>Discounted items</h1>
       <div className={styles.allProducts_sorting_container}>
-        <FilterByPrice />
-        <Sorting />
+        <FilterByPrice
+          priceFrom={priceFrom}
+          priceTo={priceTo}
+          filterByMin={filterByMin}
+          filterByMax={filterByMax}
+        />
+        <Sorting sortProducts={onSort} sortMode={sortMode} />
       </div>
-      <ProductCard array={allSales} />
+      <ProductCard array={sortedList} />
     </section>
   );
 }
