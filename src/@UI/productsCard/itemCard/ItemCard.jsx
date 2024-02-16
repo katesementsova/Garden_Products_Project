@@ -1,12 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ItemCard.module.css";
 import { useDispatch } from "react-redux";
-import {
-  addProduct,
-  decrementProduct,
-  incrementProduct,
-  removeProduct,
-} from "../../../store/slices/cartSlice";
+import { addProduct } from "../../../store/slices/cartSlice";
 import { API_URL } from "../../../api/apiUrl";
 import Minus from "../../../assets/images/minus.svg";
 import Plus from "../../../assets/images/plus.svg";
@@ -17,8 +12,7 @@ export default function ItemCard({ oneProduct }) {
     dispatch(addProduct(oneProduct));
   };
 
-  const decrement = (item) => dispatch(decrementProduct(item));
-  const increment = (item) => dispatch(incrementProduct(item));
+  const [count, setCount] = useState(1);
 
   return (
     <>
@@ -56,14 +50,18 @@ export default function ItemCard({ oneProduct }) {
             <div className={styles.item_counter}>
               <button
                 className={styles.item_product_button}
-                onClick={() => decrement(oneProduct)}
+                onClick={() => setCount(count - 1)}
               >
                 <img className={styles.minus} src={Minus}></img>
               </button>
-              <button className={styles.count}></button>
+              <input
+                onChange={(event) => setCount(event.target.value)}
+                value={count}
+                className={styles.count}
+              ></input>
               <button
                 className={styles.item_product_button}
-                onClick={() => increment(oneProduct)}
+                onClick={() => setCount(count + 1)}
               >
                 <img className={styles.plus} src={Plus}></img>
               </button>
@@ -78,9 +76,6 @@ export default function ItemCard({ oneProduct }) {
           <div className={styles.description_container}>
             <h3 className={styles.item_subtitle}>Description</h3>
             <p className={styles.description}>{oneProduct.description}</p>
-            <br />
-
-            {/* <button className={styles.readMore_btn}>Read more</button> */}
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./index.module.css";
 import Welcome from "../../components/welcome";
 import Categories from "../../components/categories/index";
 import Discount from "../../components/discount";

@@ -57,21 +57,3 @@
   background-color: #339933;
   transition: 0.4s all;
 }
-
-/* .modalWindow {
-  display: flex;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  background-color: red;
-  align-items: center;
-  justify-content: center;
-}
-
-.modalWindow div {
-  width: 200px;
-  height: 100px;
-  background-color: green;
-} */

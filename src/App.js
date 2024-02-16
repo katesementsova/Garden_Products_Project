@@ -7,10 +7,7 @@ import AllProducts from "./pages/allProducts/index";
 import AllSales from "./pages/allSales/index";
 import ProductsOfCategory from "./pages/productsOfCategory/index";
 import Item from "./pages/item/index";
-// import Layouts from "./pages/Layouts/Layouts";
-import { useDispatch, useSelector } from "react-redux";
-import { createContext, useEffect, useState } from "react";
-import { getCategory } from "./store/slices/categorySlice";
+import { useState } from "react";
 import Cart from "./pages/cart/index";
 import NotFound from "./pages/notFound/index";
 import Footer from "./components/footer";
@@ -19,15 +16,6 @@ import { ModalState } from "./pages/cart/index";
 import ModalWindow from "./components/modalWindow/index";
 
 function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getCategory());
-  // }, [dispatch]);
-  // const { CategoriesPage } = useSelector(
-  //   ({ CategoriesPage }) => CategoriesPage
-  // );
-  // console.log(CategoriesPage);
-
   const [isModal, setIsModal] = useState(false);
 
   return (
@@ -54,8 +42,8 @@ function App() {
           </Routes>
           <Footer />
         </div>
-        {isModal && <ModalWindow />}
       </div>
+      {isModal && <ModalWindow />}
     </ModalState.Provider>
   );
 }

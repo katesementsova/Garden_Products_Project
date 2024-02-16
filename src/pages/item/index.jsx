@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import styles from "./index.module.css";
-import Line from "../../assets/images/line.svg";
-import Minus from "../../assets/images/minus.svg";
-import Plus from "../../assets/images/plus.svg";
 import ItemCard from "../../@UI/productsCard/itemCard/ItemCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../store/slices/productsSlice";

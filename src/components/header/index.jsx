@@ -4,11 +4,12 @@ import styles from "./index.module.css";
 import Logo from "../../assets/images/logo.svg";
 import CartImg from "../../assets/images/basket_empty.svg";
 import { useState } from "react";
-import Icon from "../../assets/images/icon_menu.svg";
 import { useSelector } from "react-redux";
 import { basketSelector } from "../../store/slices/cartSlice";
+import NavBar from "../../@UI/reused/navbar";
+import { useWindowSize } from "@uidotdev/usehooks";
 
-export default function Header() {
+export default function Header({ open, navClassName }) {
   const nav = [
     { name: "Main Page", path: "/" },
     { name: "Categories", path: "CategoriesPage" },
@@ -17,18 +18,16 @@ export default function Header() {
   ];
 
   const [isOpen, setOpen] = useState();
-
   const { basket: basketProducts } = useSelector(basketSelector);
+  const { width } = useWindowSize();
 
   return (
     <header className={styles.header_container}>
-      <img className={styles.navbar_logo} src={Icon} />
-
-      <NavLink to={"/"}>
+      <NavLink to="/">
         <img className={styles.nav_logo} src={Logo} />
       </NavLink>
       <div className={styles.header_nav}>
-        <ul className={styles.nav_list}>
+        <ul className={open ? `${navClassName}` : `${styles.nav_list}`}>
           {nav.map((el) => (
             <NavLink
               className={styles.nav_link}
@@ -49,6 +48,7 @@ export default function Header() {
           <img className={styles.cart} src={CartImg} />
         </NavLink>
         <div className={styles.cart_count}>{basketProducts.length}</div>
+        {/* {width < 768 && <NavBar />} */}
       </div>
     </header>
   );

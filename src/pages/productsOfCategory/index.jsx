@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./index.module.css";
 import { useParams } from "react-router-dom";
-// import { useGetProductsInCategoriesQuery } from "../../api/productApi";
 import ProductCard from "../../@UI/productsCard/productCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory } from "../../store/slices/ProductOfCategorySlice";

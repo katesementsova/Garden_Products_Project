@@ -1,10 +1,9 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext } from "react";
 import styles from "./index.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { basketSelector } from "../../store/slices/cartSlice";
 import ModalWindow from "../../components/modalWindow/index";
 import SectionHead from "../../components/sectionHead";
-import UIForm from "../../@UI/forms/UIForm";
 import CartCard from "../../@UI/productsCard/cartCard/CartCard";
 import CartCounter from "../../components/cartCounter/CartCounter";
 

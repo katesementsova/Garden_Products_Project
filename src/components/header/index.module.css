@@ -117,4 +117,5 @@
   opacity: 0;
   position: absolute;
   background-color: #fff;
+  cursor: pointer;
 }
