@@ -21,7 +21,6 @@ function Cart() {
   let totalAmount = allPrice
     .reduce((total, value) => total + value, 0)
     .toFixed(2);
-  console.log(totalAmount);
 
   return (
     <div className={styles.cart_container}>

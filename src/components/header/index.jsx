@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./index.module.css";
 import Logo from "../../assets/images/logo.svg";
 import CartImg from "../../assets/images/basket_empty.svg";
@@ -19,13 +19,13 @@ export default function Header({ open, navClassName }) {
 
   const [isOpen, setOpen] = useState();
   const { basket: basketProducts } = useSelector(basketSelector);
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
 
   return (
     <header className={styles.header_container}>
-      <NavLink to="/">
+      <Link to="/">
         <img className={styles.nav_logo} src={Logo} />
-      </NavLink>
+      </Link>
       <div className={styles.header_nav}>
         <ul className={open ? `${navClassName}` : `${styles.nav_list}`}>
           {nav.map((el) => (

@@ -8,7 +8,7 @@ export default function CategoryCard({ array }) {
     <div className={styles.categories_items}>
       {array
         ? array.map((category) => (
-            <Link to={`/ProductsOfCategory/${category.id}`}>
+            <Link key={category.id} to={`/ProductsOfCategory/${category.id}`}>
               <div className={styles.categories_item} key={category.id}>
                 <img
                   className={styles.categories_image}
@@ -16,7 +16,7 @@ export default function CategoryCard({ array }) {
                   alt="image"
                 />
                 <Link to={`/ProductsOfCategory/${category.id}`}>
-                  <button className={styles.categories_title}>
+                  <button className={styles.category_title}>
                     {category.title}
                   </button>
                 </Link>

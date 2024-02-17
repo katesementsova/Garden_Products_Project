@@ -27,11 +27,9 @@ export default function ItemCard({ oneProduct }) {
           <div className={styles.price_info}>
             {oneProduct.discont_price ? (
               <div className={styles.item_price}>
-                <p className={styles.price}>{oneProduct.price + "$"}</p>
+                <p className={styles.price}>{oneProduct.discont_price + "$"}</p>
 
-                <p className={styles.oldPrice}>
-                  {oneProduct.discont_price + "$"}
-                </p>
+                <p className={styles.oldPrice}>{oneProduct.price + "$"}</p>
               </div>
             ) : (
               <p className={styles.price}>{oneProduct.price + "$"}</p>

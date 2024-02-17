@@ -52,6 +52,9 @@ const basketSlice = createSlice({
         return el;
       });
     },
+    clearCart: (state) => {
+      state.basket = [];
+    },
   },
 });
 
@@ -62,7 +65,7 @@ export const {
   removeProduct,
   incrementProduct,
   decrementProduct,
-  emptyTrash,
+  clearCart,
 } = basketSlice.actions;
 
 export default basketSlice.reducer;

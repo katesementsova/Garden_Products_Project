@@ -1,5 +1,5 @@
 .navMenu_container {
-  margin-top: 40px;
+  margin: 40px 0;
   display: flex;
   align-items: center;
 }
@@ -19,9 +19,7 @@
   color: #8b8b8b;
   text-align: center;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 126%;
   cursor: pointer;
 }
 
@@ -36,9 +34,7 @@
   color: #282828;
   text-align: center;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 126%;
   cursor: pointer;
 }
 

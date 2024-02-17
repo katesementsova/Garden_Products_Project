@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./CartCounter.module.css";
 import UIForm from "../../@UI/forms/UIForm";
-import { useSelector } from "react-redux";
-import { basketSelector } from "../../store/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { basketSelector, clearCart } from "../../store/slices/cartSlice";
+import { useSendProductMutation } from "../../api/productApi";
+import { ModalState } from "../../pages/cart/index";
 
 export default function CartCounter() {
+  const dispatch = useDispatch();
+  const emptyCart = () => dispatch(clearCart());
+
+  const { setIsModal } = useContext(ModalState);
+
+  const [sendProduct] = useSendProductMutation();
   const { basket: basketProducts } = useSelector(basketSelector);
+
   const allPrice = basketProducts.map((item) => {
     if (item.discount_total_price) {
       return item.discount_total_price;
@@ -16,7 +25,6 @@ export default function CartCounter() {
   let totalAmount = allPrice
     .reduce((total, value) => total + value, 0)
     .toFixed(2);
-  console.log(totalAmount);
 
   return (
     <div className={styles.form_container}>
@@ -28,7 +36,12 @@ export default function CartCounter() {
           <p className={styles.total_price}>{`$${totalAmount}`}</p>
         </div>
       </div>
-      <UIForm />
+      <UIForm
+        emptyCart={emptyCart}
+        sendProduct={sendProduct}
+        setIsModal={setIsModal}
+        basketProducts={basketProducts}
+      />
     </div>
   );
 }

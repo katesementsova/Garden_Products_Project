@@ -15,7 +15,7 @@ export default function ProductCard({ array }) {
     <div className={styles.allProducts_items}>
       {array
         ? array.map((product) => (
-            <div className={styles.container}>
+            <div key={product.id} className={styles.container}>
               <button
                 className={styles.btnAdd}
                 onClick={() => addProductInBasket(product)}

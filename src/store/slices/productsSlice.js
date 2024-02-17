@@ -18,15 +18,18 @@ const productsSlice = createSlice({
     products: [],
     isLoading: false,
   },
-  reducers: {
-    setProducts: (state, action) => {
-      state.products = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder.addCase(getProducts.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getProducts.fulfilled, (state, { payload }) => {
+      state.products = payload;
+      state.isLoading = false;
+    });
+    builder.addCase(getProducts.rejected, (state) => {
+      state.isLoading = false;
+    });
   },
 });
-
-export const productsSelector = (state) => state.products;
-
-export const { setProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

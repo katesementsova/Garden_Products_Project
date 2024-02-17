@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./UIForm.module.css";
 import { useForm } from "react-hook-form";
-import { ModalState } from "../../pages/cart/index";
-import { Link } from "react-router-dom";
 
-export default function UIForm() {
+export default function UIForm({
+  sendDiscount,
+  sendProduct,
+  basketProducts,
+  setIsModal,
+  emptyCart,
+}) {
   const {
     handleSubmit,
     register,
@@ -15,11 +19,14 @@ export default function UIForm() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    sendDiscount && sendDiscount({ ...data });
+    sendProduct && sendProduct({ ...data, order: basketProducts });
+    emptyCart && emptyCart();
+    console.log({ ...data, order: basketProducts });
+    reset();
   };
 
-  const { isModal, setIsModal } = useContext(ModalState);
-  console.log(isModal);
+  // const { isModal, setIsModal } = useContext(ModalState);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.container_form}>
@@ -54,15 +61,13 @@ export default function UIForm() {
         placeholder="Email"
       />
       {errors?.email && <p>{errors.email?.message}</p>}
-      <Link className={styles.order_btn} to={"/CartIsEmpty"}>
-        <button
-          disabled={!isValid}
-          className={styles.form_button}
-          onClick={() => setIsModal(true)}
-        >
-          Order
-        </button>
-      </Link>
+      <button
+        disabled={!isValid}
+        className={styles.form_button}
+        onClick={() => setIsModal && setIsModal(true)}
+      >
+        Order
+      </button>
     </form>
   );
 }

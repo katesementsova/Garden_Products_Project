@@ -61,7 +61,7 @@
 .nav_menu_btn {
   display: none;
 }
-
+/* 
 @media (max-width: 1000px) {
   .navbar_logo {
     opacity: 1;
@@ -118,4 +118,4 @@
   position: absolute;
   background-color: #fff;
   cursor: pointer;
-}
+} */
