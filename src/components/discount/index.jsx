@@ -13,7 +13,12 @@ export default function Discount() {
       <div className={styles.discount_form}>
         <img className={styles.discount_image} src={DiscountImg} />
 
-        <UIForm sendDiscount={sendDiscount} />
+        <UIForm
+          sendDiscount={sendDiscount}
+          button="Get a discount"
+          input_styles={styles.input_order_form}
+          button_styles={styles.form_button}
+        />
       </div>
     </div>
   );

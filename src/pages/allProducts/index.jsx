@@ -34,7 +34,7 @@ export default function AllProducts() {
   }
 
   return (
-    <section className={styles.allProducts}>
+    <div className={styles.allProducts}>
       <NavMenu previous="Main Page" current="All products" />
       <h1 className={styles.allProducts_title}>All products</h1>
       <div className={styles.allProducts_sorting_container}>
@@ -52,6 +52,6 @@ export default function AllProducts() {
         <Sorting sortProducts={onSort} sortMode={sortMode} />
       </div>
       <ProductCard array={sortedList} />
-    </section>
+    </div>
   );
 }

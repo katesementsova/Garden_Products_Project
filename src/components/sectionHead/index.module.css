@@ -1,5 +1,6 @@
 .container {
   margin-bottom: 40px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,4 +39,15 @@
   color: #8b8b8b;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 650px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .line,
+  .btn {
+    opacity: 0;
+  }
 }

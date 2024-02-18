@@ -52,10 +52,10 @@ export default function CartCard({ array }) {
                 </button>
               </div>
               {product.discont_price ? (
-                <>
+                <div className={styles.price_container}>
                   <p className={styles.price}>{product.discont_price + "$"}</p>
                   <p className={styles.oldPrice}>{product.price + "$"}</p>
-                </>
+                </div>
               ) : (
                 <p className={styles.price}>{product.price + "$"}</p>
               )}

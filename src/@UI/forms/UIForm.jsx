@@ -8,6 +8,9 @@ export default function UIForm({
   basketProducts,
   setIsModal,
   emptyCart,
+  button,
+  input_styles,
+  button_styles,
 }) {
   const {
     handleSubmit,
@@ -26,8 +29,6 @@ export default function UIForm({
     reset();
   };
 
-  // const { isModal, setIsModal } = useContext(ModalState);
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.container_form}>
       <input
@@ -35,7 +36,7 @@ export default function UIForm({
           requared: "field is requared",
         })}
         type="text"
-        className={styles.input_order_form}
+        className={input_styles}
         placeholder="Name"
       />
       {errors?.name && <p>{errors.name?.message}</p>}
@@ -47,7 +48,7 @@ export default function UIForm({
           maxLength: { value: 13, message: "13 characters" },
         })}
         type="number"
-        className={styles.input_order_form}
+        className={input_styles}
         placeholder="Phone number"
       />
       {errors?.number && <p>{errors.number?.message}</p>}
@@ -57,16 +58,16 @@ export default function UIForm({
           requared: "field is requared",
         })}
         type="email"
-        className={styles.input_order_form}
+        className={input_styles}
         placeholder="Email"
       />
       {errors?.email && <p>{errors.email?.message}</p>}
       <button
         disabled={!isValid}
-        className={styles.form_button}
+        className={button_styles}
         onClick={() => setIsModal && setIsModal(true)}
       >
-        Order
+        {button}
       </button>
     </form>
   );

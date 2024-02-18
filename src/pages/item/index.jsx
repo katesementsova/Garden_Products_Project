@@ -17,18 +17,19 @@ export default function Item() {
 
   const { products } = useSelector(({ productItem }) => productItem);
   console.log(products);
+
   return (
-    <section className={styles.item}>
-      {products && (
-        <>
+    <div className={styles.item}>
+      {products[0] && (
+        <div className={styles.item_container}>
           <NavMenu
             current="Categories"
             categoryName="Products of category"
             itemName="Item"
           />
           <ItemCard oneProduct={products[0]} />
-        </>
+        </div>
       )}
-    </section>
+    </div>
   );
 }

@@ -1,9 +1,11 @@
 .allProducts {
-  margin: auto 40px;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .allProducts_title {
-  margin-top: 40px;
   align-self: stretch;
   color: #282828;
   font-size: 64px;
@@ -13,9 +15,20 @@
 }
 
 .allProducts_sorting_container {
-  margin-top: 40px;
   display: flex;
   height: 36px;
   align-items: flex-start;
   gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .allProducts_sorting_container {
+    max-height: 138px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 15px;
+  }
 }

@@ -15,11 +15,11 @@ export default function CategoryCard({ array }) {
                   src={API_URL + category.image}
                   alt="image"
                 />
-                <Link to={`/ProductsOfCategory/${category.id}`}>
+                <div>
                   <button className={styles.category_title}>
                     {category.title}
                   </button>
-                </Link>
+                </div>
               </div>
             </Link>
           ))

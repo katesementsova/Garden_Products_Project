@@ -1,7 +1,16 @@
 .cart_container {
-  margin: auto 40px;
+  margin: 80px 40px;
 }
 
 .cart_forms {
   display: flex;
+  gap: 40px;
+}
+
+@media (max-width: 1110px) {
+  .cart_forms {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 }

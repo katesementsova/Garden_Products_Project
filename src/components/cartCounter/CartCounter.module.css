@@ -1,12 +1,12 @@
 .form_container {
-  margin-top: 40px;
-  width: 548px;
-  height: 582px;
+  max-width: 548px;
+  width: 100%;
   padding: 32px;
   border-radius: 12px;
-  gap: 32px;
   display: flex;
   flex-direction: column;
+  gap: 32px;
+  flex-wrap: wrap;
   background-color: #f1f3f4;
 }
 
@@ -43,7 +43,6 @@
 
 .total_price {
   color: #282828;
-
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
@@ -54,4 +53,48 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
+}
+
+.input_order_form {
+  padding: 16px 32px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px #ddd;
+  color: #8b8b8b;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.form_button {
+  padding: 16px 32px;
+  cursor: pointer;
+  align-self: stretch;
+  border-radius: 6px;
+  border: none;
+  background-color: #339933;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+@media (max-width: 1110px) {
+  .form_container,
+  .input_order_form {
+    max-width: 1110px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .total_price {
+    font-size: 40px;
+  }
+  .form_total,
+  .form_items {
+    font-size: 30px;
+  }
 }

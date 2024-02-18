@@ -41,6 +41,9 @@ export default function CartCounter() {
         sendProduct={sendProduct}
         setIsModal={setIsModal}
         basketProducts={basketProducts}
+        button="Order"
+        input_styles={styles.input_order_form}
+        button_styles={styles.form_button}
       />
     </div>
   );

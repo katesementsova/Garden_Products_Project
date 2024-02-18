@@ -18,8 +18,41 @@
 .discount_form {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 32px;
+}
+
+.discount_image {
+  max-width: 748px;
+  width: 100%;
+  max-height: 360px;
+  height: 100%;
+}
+
+.input_order_form {
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: text;
+}
+
+.input_order_form::-webkit-input-placeholder {
+  color: #c5c5c5;
+}
+
+.form_button {
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: none;
+  background: #fff;
+  align-self: stretch;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {
@@ -30,59 +63,17 @@
     font-size: 48px;
     padding-bottom: 40px;
   }
+  .input_order_form,
+  .form_button {
+    max-width: 1200px;
+    width: 100%;
+  }
 }
 
-.discount_image {
-  max-width: 748px;
-  width: 100%;
-  max-height: 360px;
-  height: 100%;
-}
-
-.discount_list {
-  display: flex;
-  width: 516px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-}
-
-.discount_input {
-  width: 516px;
-  margin-bottom: 16px;
-  /* width: 100%; */
-  /* display: flex; */
-  padding: 16px 32px;
-  /* align-items: center; */
-  /* gap: 10px; */
-  /* align-self: stretch; */
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 1);
-  background: transparent;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.discount_input::-webkit-input-placeholder {
-  color: #c5c5c5;
-}
-
-.discount_btn {
-  width: 516px;
-  height: 58px;
-  /* width: 100%; */
-  padding: 16px 32px;
-  /* justify-content: center;
-  align-items: center;
-  gap: 10px; */
-  border-radius: 6px;
-  border: none;
-  background: #fff;
-  /* color: #282828;
-  text-align: center;
-  text-decoration: none; */
-  font-size: 20px;
-  /* font-style: normal; */
-  font-weight: 600;
-  /* line-height: 130%; */
+@media (max-width: 1110px) {
+  .input_order_form,
+  .form_button {
+    max-width: 1110px;
+    width: 100%;
+  }
 }
