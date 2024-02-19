@@ -1,107 +1,14 @@
 .productsOfCategory_container {
-  margin: auto 40px;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .title {
-  margin-top: 40px;
   color: #282828;
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
   line-height: 110%;
 }
-
-.sorting_container {
-  /* margin-top: 40px; */
-  display: flex;
-  height: 36px;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-/* .tools_items {
-  margin-top: 40px;
-  display: flex;
-  gap: 32px;
-}
-
-.tools_item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  position: relative;
-}
-
-.tools_image {
-  height: 284px;
-  align-self: stretch;
-  border-bottom: 1px solid var(--grey-divider, #ddd);
-  background: lightgray;
-  background-position: cover;
-  background-repeat: no-repeat;
-}
-
-.tools_discount {
-  display: flex;
-  padding: 4px 8px;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 10px;
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  border-radius: var(--radius-small, 6px);
-  background: var(--green, #393);
-  color: var(--txt-white, #fff);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-}
-
-.tools_info {
-  display: flex;
-  width: 316px;
-  padding: 0px 32px 32px 32px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.tools_description {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  align-self: stretch;
-  overflow: hidden;
-  color: var(--txt-black, #282828);
-  text-overflow: ellipsis;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 130%; 
-}
-
-.tools_price {
-  display: flex;
-  gap: 16px;
-  align-items: end;
-}
-
-.tools_newPrice {
-  color: var(--txt-black, #282828);
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-}
-
-.tools_oldPrice {
-  color: var(--txt-grey, #8b8b8b);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  text-decoration-line: line-through;
-} */

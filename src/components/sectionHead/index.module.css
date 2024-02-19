@@ -31,7 +31,6 @@
 
 .btn {
   white-space: nowrap;
-  height: 36px;
   padding: 8px 16px;
   border-radius: 6px;
   border: 1px solid #ddd;
@@ -39,6 +38,10 @@
   color: #8b8b8b;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
 }
 
 @media (max-width: 650px) {

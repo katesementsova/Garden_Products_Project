@@ -18,7 +18,6 @@ const productOfCategorySlice = createSlice({
     categoryProducts: [],
     isLoading: false,
   },
-  // reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getCategory.pending, (state) => {
       state.isLoading = true;

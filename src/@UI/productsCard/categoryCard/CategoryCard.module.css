@@ -34,14 +34,3 @@
   font-weight: 500;
   cursor: pointer;
 }
-/* 
-@media (max-width: 1024px) {
-  .categories_items {
-    display: grid;
-    grid-template-rows: 2fr, 1fr;
-    grid-template-columns: 2fr, 1fr;
-    grid-column-gap: 32px;
-    grid-row-gap: 32px;
-    grid-row-gap: 32px;
-  }
-} */
