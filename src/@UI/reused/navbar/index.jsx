@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
-import Header from "../../../components/header";
 
-export default function NavBar() {
-  const { open, setOpen } = useState(false);
+export default function NavBar({ open, setOpen }) {
   const openNavbar = () => setOpen(!open);
 
   return (
@@ -16,11 +14,6 @@ export default function NavBar() {
       >
         <span></span>
       </div>
-      {open && (
-        <div className={styles.main_container}>
-          <Header isOpen={open} navClassName={styles.links_navbar} />
-        </div>
-      )}
     </div>
   );
 }

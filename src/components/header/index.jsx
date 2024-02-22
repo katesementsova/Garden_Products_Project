@@ -7,9 +7,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { basketSelector } from "../../store/slices/cartSlice";
 import NavBar from "../../@UI/reused/navbar";
-import { useWindowSize } from "@uidotdev/usehooks";
 
-export default function Header({ open, navClassName }) {
+export default function Header() {
   const nav = [
     { name: "Main Page", path: "/" },
     { name: "Categories", path: "CategoriesPage" },
@@ -17,17 +16,18 @@ export default function Header({ open, navClassName }) {
     { name: "All sales", path: "AllSales" },
   ];
 
-  const [isOpen, setOpen] = useState();
+  const [open, setOpen] = useState(false);
   const { basket: basketProducts } = useSelector(basketSelector);
-  // const { width } = useWindowSize();
 
   return (
     <header className={styles.header_container}>
       <Link to="/">
         <img className={styles.nav_logo} src={Logo} />
       </Link>
-      <div className={styles.header_nav}>
-        <ul className={open ? `${navClassName}` : `${styles.nav_list}`}>
+      <div
+        className={!open ? `${styles.links_navbar}` : `${styles.header_nav}`}
+      >
+        <ul className={styles.nav_list}>
           {nav.map((el) => (
             <NavLink
               className={styles.nav_link}
@@ -38,17 +38,13 @@ export default function Header({ open, navClassName }) {
             </NavLink>
           ))}
         </ul>
-        <button
-          className={styles.nav_menu_btn}
-          onClick={() => setOpen(!isOpen)}
-        ></button>
       </div>
       <div className={styles.cart_icon}>
         <NavLink to={"Cart"}>
           <img className={styles.cart} src={CartImg} />
         </NavLink>
         <div className={styles.cart_count}>{basketProducts.length}</div>
-        {/* {width < 768 && <NavBar />} */}
+        <NavBar open={open} setOpen={setOpen} />
       </div>
     </header>
   );
