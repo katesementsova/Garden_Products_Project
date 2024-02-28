@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 export default function Sorting({ sortProducts, sortMode }) {
   return (
     <div className={styles.sorting_container}>
-      <span className={styles.title}></span>
+      <span className={styles.title}>Sorted</span>
       <select
         onChange={sortProducts}
         value={sortMode}
@@ -14,7 +14,7 @@ export default function Sorting({ sortProducts, sortMode }) {
           By default
         </option>
         <option className={styles.sorting_option} value="higher">
-          By higher price{" "}
+          By higher price
         </option>
         <option className={styles.sorting_option} value="lower">
           By lower price
