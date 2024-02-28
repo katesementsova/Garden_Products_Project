@@ -2,6 +2,7 @@ import React from "react";
 import NotFoundImg from "../../assets/images/notfound.svg";
 import styles from "./index.module.css";
 import Four from "../../assets/images/four.svg";
+import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
@@ -16,7 +17,9 @@ function NotFound() {
         We’re sorry, the page you requested could not be found. <br /> Please go
         back to the homepage.
       </p>
-      <button className={styles.notFound_goHome}>Go Home</button>
+      <Link className={styles.notFound_goHome} to={"/"}>
+        <p>Go Home</p>
+      </Link>
     </div>
   );
 }
