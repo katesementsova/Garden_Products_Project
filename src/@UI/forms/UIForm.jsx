@@ -25,7 +25,6 @@ export default function UIForm({
     sendDiscount && sendDiscount({ ...data });
     sendProduct && sendProduct({ ...data, order: basketProducts });
     emptyCart && emptyCart();
-    console.log({ ...data, order: basketProducts });
     reset();
   };
 
